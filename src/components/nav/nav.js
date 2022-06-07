@@ -6,7 +6,9 @@ export function Navbar() {
     <nav className="nav">
       <div className="container">
         <div className="nav-logo">
-          <span>E-COMMERCE</span>
+          <Link to={"home"}>
+            <span>E-COMMERCE</span>
+          </Link>
         </div>
         <ul className="nav-ul">
           <li>
