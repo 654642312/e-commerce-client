@@ -1,0 +1,36 @@
+.card {
+  max-width: 280px;
+  display: flex;
+  flex-flow: column;
+  border-radius: 4px;
+  box-shadow: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+    border-top: 1px solid #dddddd;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+}
+
+.card-info span {
+    margin-bottom: 0.5em;
+}
+
+.card-info-price {
+    font-size: 1.5em;
+    font-weight: bold;
+}
