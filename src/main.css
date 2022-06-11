@@ -364,4 +364,6 @@ a {
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: 8px;
+  padding-right: 8px;
 }
