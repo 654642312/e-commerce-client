@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-export function Navbar() {
+export function Navbar({ openModal1, openModal2 }) {
   return (
     <nav className="nav">
       <div className="container">
@@ -21,10 +21,10 @@ export function Navbar() {
             <Link to={"cart"}>Cart</Link>
           </li>
           <li>
-            <Link to={"login"}>Login</Link>
+            <span onClick={openModal1}>Login</span>
           </li>
           <li>
-            <Link to={"signup"}>Sign up</Link>
+            <span onClick={openModal2}>Sign Up</span>
           </li>
         </ul>
       </div>

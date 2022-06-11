@@ -1,0 +1,35 @@
+.signup-container-title {
+  text-align: center;
+}
+
+.signup-data {
+  margin-bottom: 80px;
+}
+
+.signup-container-input {
+  height: 40px;
+  width: 100%;
+  margin: 40px 0;
+}
+
+.signup-input {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 8px;
+  border: 1px solid #adadad;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1282d7;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #0f6cb9;
+}
