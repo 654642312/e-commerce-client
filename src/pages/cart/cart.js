@@ -17,6 +17,8 @@ function ShoppingCart() {
 
   if(cartContext.cart.length === 0) return <CartIsEmpty />
 
+  console.log(cartContext.total);
+
   return (
     <div className="cart-page">
       <div>
@@ -32,9 +34,8 @@ function ShoppingCart() {
         ))}
       </div>
       <div className="cart-page-info">
-        <button className="cart-page-info-clear-button">Clear Cart</button>
         <span className="cart-page-info-price">
-          <span>Total:</span> $ 200
+          <span>Total:</span> $ { cartContext.total }
         </span>
         <button className="cart-page-info-button-checkout">
           Paypal Checkout

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../../context/cart/cart-context";
 import "./styles.css";
 
@@ -6,9 +6,22 @@ function ShoppingCartCard({ title, price, quantity, image, id }) {
 
   const cartContext = useContext(CartContext);
 
+  const [quantityState, setQuantityState] = useState(quantity);
+
   const removeItemCart = (id) => {
     cartContext.removeItemCart(id);
   };
+
+  const incrementQuantity = (id) => {
+    cartContext.incrementQuantity(id);
+    setQuantityState( parseInt(quantityState) + 1)
+  }
+
+  const decrementQuantity = (id) => {
+    if(quantityState === 0) return;
+    cartContext.decrementQuantity(id);
+    setQuantityState(parseInt(quantityState) - 1)
+  }
 
   return (
     <div className="cart">
@@ -22,8 +35,8 @@ function ShoppingCartCard({ title, price, quantity, image, id }) {
         </p>
         <p className="cart-info-quantity">
           <span>Quantity:</span>{" "}
-          <button className="button-quantity-decrement">-</button> {quantity}{" "}
-          <button className="button-quantity-increment">+</button>
+          <button onClick={() => decrementQuantity(id)} className="button-quantity-decrement">-</button> {quantityState}{" "}
+          <button onClick={() => incrementQuantity(id)} className="button-quantity-increment">+</button>
         </p>
         <div className="cart-actions">
           <button onClick={() => removeItemCart(id)} className="cart-actions-remove">
