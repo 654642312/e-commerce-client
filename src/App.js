@@ -18,10 +18,10 @@ function App() {
   return (
     <div>
       <Modal isOpen={isOpen1} closeModal={closeModal1} >
-        <LoginForm />
+        <LoginForm closeModal={closeModal1} />
       </Modal>
       <Modal isOpen={isOpen2} closeModal={closeModal2} >
-        <SignUpForm />
+        <SignUpForm closeModal={closeModal2} />
       </Modal>
       <Navbar openModal1={openModal1} openModal2={openModal2} />
       <div className="container">

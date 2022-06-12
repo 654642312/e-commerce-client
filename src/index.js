@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import './main.css';
+import "./main.css";
+import CartState from "./context/cart/cart-state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <CartState>
+        <App />
+      </CartState>
     </Router>
   </React.StrictMode>
 );

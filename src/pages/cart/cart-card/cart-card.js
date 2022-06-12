@@ -1,6 +1,15 @@
+import { useContext } from "react";
+import CartContext from "../../../context/cart/cart-context";
 import "./styles.css";
 
-function ShoppingCartCard({ title, price, quantity, image }) {
+function ShoppingCartCard({ title, price, quantity, image, id }) {
+
+  const cartContext = useContext(CartContext);
+
+  const removeItemCart = (id) => {
+    cartContext.removeItemCart(id);
+  };
+
   return (
     <div className="cart">
       <div>
@@ -17,7 +26,7 @@ function ShoppingCartCard({ title, price, quantity, image }) {
           <button className="button-quantity-increment">+</button>
         </p>
         <div className="cart-actions">
-          <button className="cart-actions-remove">
+          <button onClick={() => removeItemCart(id)} className="cart-actions-remove">
             {" "}
             <svg
               id="Layer_1"
@@ -42,12 +51,5 @@ function ShoppingCartCard({ title, price, quantity, image }) {
   );
 }
 
-function cartIsEmpty() {
-  return (
-    <div className="cart-empty">
-      <h3>Your cart is empty</h3>
-    </div>
-  );
-}
 
 export default ShoppingCartCard;

@@ -14,10 +14,10 @@ function Products() {
       <CardContainer>
         {books?.map((book) => (
           <Card
-            key={book.id}
+            key={book._id}
             img={book.image}
             title={book.title}
-            id={book.id}
+            id={book._id}
             price={book.price}
           />
         ))}

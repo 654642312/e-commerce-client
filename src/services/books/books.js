@@ -19,7 +19,5 @@ export async function getBooksById(id) {
     },
   });
   const data = await response.json();
-  console.log('holaaa')
-  console.log(data)
   return data;
 }

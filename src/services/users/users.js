@@ -1,15 +1,30 @@
 import { BASE_URL } from '../../env'
 
-async function registerUser() {
-  const response = fetch(`${BASE_URL}/users`, {
+export async function registerUser({ email, password, username }) {
+  const response = await fetch(`${BASE_URL}/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: "John Doe",
-      email: "edgar_belandria010@hotmail.com",
-      password: "password",
+      email,
+      password,
+      username
+    }),
+  });
+  const data = await response.json();
+  return data
+}
+
+export async function login({ email, password }) {
+  const response = await fetch(`${BASE_URL}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password
     }),
   });
   const data = await response.json();
