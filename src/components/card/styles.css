@@ -1,5 +1,5 @@
 .card {
-  max-width: 280px;
+  width: 280px;
   display: flex;
   flex-flow: column;
   border-radius: 4px;
