@@ -1,0 +1,9 @@
+.banner {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.banner img {
+    margin-top: 40px;
+    width: 100%;
+}
