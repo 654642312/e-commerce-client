@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./styles.css";
 import { registerUser } from "../../services/users/users";
-import { saveToken } from "../../helper/helpers";
+import UserContext from "../../context/user/user-context";
 
 function SignUp({ closeModal }) {
+  const userContext = useContext(UserContext);
   const [email, setEmail] = useState("eve.holt@reqres.in");
   const [password, setPassword] = useState("pistol");
 
@@ -18,7 +19,7 @@ function SignUp({ closeModal }) {
   const signup = async (e) => {
     e.preventDefault();
     const response = await registerUser({ email, password });
-    saveToken(response.token)
+    userContext.login(response.token);
     closeModal();
   };
 

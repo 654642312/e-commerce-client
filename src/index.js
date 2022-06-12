@@ -5,13 +5,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./main.css";
 import CartState from "./context/cart/cart-state";
+import UserState from "./context/user/user-state";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <CartState>
-        <App />
+        <UserState>
+          <App />
+        </UserState>
       </CartState>
     </Router>
   </React.StrictMode>
